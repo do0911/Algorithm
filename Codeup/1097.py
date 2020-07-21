@@ -56,7 +56,7 @@
 a = [[0 for _ in range(19)] for _ in range(19)]
 
 for i in range(19):
-    badook = [int(x) for x in input().split(' ')]
+    badook = list(map(int, input().split(' ')))
     for j in range(19):
         a[i][j] = badook[j]
         
@@ -64,7 +64,7 @@ for i in range(19):
 n = int(input())
 
 for v in range (n):
-    xy = [int (x) for x in input().split(' ')]
+    xy = list(map(int, input().split(' ')))
 
     for i in range(19):
         if a[xy[0]-1][i] == 0:

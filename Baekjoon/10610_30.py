@@ -19,13 +19,19 @@ N을 입력받는다. N는 최대 105개의 숫자로 구성되어 있으며, 0�
 88755420
 
 '''
-n = list(map(int,input()))
-n.sort(reverse=True)
+n= input()
+sum=0
 
-if n.count(0) == 0:
+for i in n:
+    sum = sum + int(i)
+
+
+if n.count('0') == 0:
+    print('-1')
+elif sum % 3 != 0:
     print('-1')
 else:
-    print(''.join(map(str, n)))
+    print(''.join(sorted(n, reverse=True)))
 
 '''
 list와 map에 int를 인자로 주어서 숫자형으로 배열 입력가능

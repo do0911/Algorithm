@@ -32,9 +32,9 @@ d = 0 or 1
 0 0 1 0 1
 0 0 0 0 1
 '''
-map = [int(x) for x in input().split(' ')]
+h, w = map(int, input().split(' '))
 
-a = [[0 for _ in range(map[1])] for _ in range(map[0])]
+a = [[0 for _ in range(w)] for _ in range(h)]
 
 
 num = int(input())
@@ -51,7 +51,7 @@ for i in range(num):
         for j in range(stick[0]):
             a[stick[2]-1+j][stick[3]-1] = 1
 
-for i in range(map[0]):
-    for j in range(map[1]):
+for i in range(h):
+    for j in range(w):
         print(a[i][j], end=' ')
     print()
