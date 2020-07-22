@@ -40,7 +40,7 @@ a = [[0 for _ in range(w)] for _ in range(h)]
 num = int(input())
 
 for i in range(num):
-    stick = [int(x) for x in input().split(' ')]
+    stick = list(map(int, input().split(' ')))
     a[stick[2]-1][stick[3]-1] = 1
 
     if stick[1] == 0:
