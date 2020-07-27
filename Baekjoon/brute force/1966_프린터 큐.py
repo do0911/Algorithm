@@ -1,4 +1,4 @@
-'''
+﻿'''
 문제
 여러분도 알다시피 여러분의 프린터 기기는 여러분이 인쇄하고자 하는 문서를 인쇄 명령을 받은 ‘순서대로’, 즉 먼저 요청된 것을 먼저 인쇄한다. 여러 개의 문서가 쌓인다면 Queue 자료구조에 쌓여서 FIFO - First In First Out - 에 따라 인쇄가 되게 된다. 하지만 상근이는 새로운 프린터기 내부 소프트웨어를 개발하였는데, 이 프린터기는 다음과 같은 조건에 따라 인쇄를 하게 된다.
 
@@ -28,23 +28,27 @@
 5
 '''
 t = int(input())
+
 for i in range(t):
-    n, m = map(int, input().split())
-    s = list(map(int, input().split()))
-    s_ = [0 for i in range(n)]
-    s_[m] = 1
-    cnt = 0
+    n, m = map(int, input().split(' '))
+    a = list(map(int, input().split(' ')))
+    a_= [0 for i in range(n)]
+
+    a_[m] = 1
+    rank = 0
+
     while True:
-        if s[0] == max(s):
-            cnt += 1
-            if s_[0] == 1:
-                print(cnt)
+        if a[0] == max(a):
+            rank += 1
+            if a_[0] == 1:
                 break
             else:
-                del s[0]
-                del s_[0]
+                del a[0]
+                del a_[0]
         else:
-            s.append(s[0])
-            del s[0]
-            s_.append(s_[0])
-            del s_[0]
+            a.append(a[0])
+            del a[0]
+            a_.append(a_[0])
+            del a_[0]
+
+    print(rank)
